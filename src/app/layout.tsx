@@ -85,11 +85,6 @@ export default function RootLayout({
                   CONTACT
                 </a>
               </div>
-              <div className="text-center p-5 w-full absolute bottom-0">
-                <span className="text-gray-100">
-                  © Oka Sentana 2024 • imprint
-                </span>
-              </div>
             </div>
           </div>
 
@@ -97,7 +92,7 @@ export default function RootLayout({
           <div className="flex flex-1 flex-col md:flex-row">
             {/* Sidebar */}
             <div>
-              <div className="flex flex-col items-center justify-center text-center w-full h-full p-5 md:fixed relative md:w-auto border-r border-slate-800 md:z-50 my-10 md:my-0">
+              <div className="flex flex-col items-center justify-center text-center w-full h-full p-5 md:fixed relative md:w-[30rem] md:border-r md:border-slate-800 md:z-50 my-10 md:my-0 bg-black border-0">
                 <div className="grid place-items-center gap-5">
                   <Avatar
                     alt="Oka Sentana"
@@ -122,13 +117,18 @@ export default function RootLayout({
                     </a>
                   </div>
                 </div>
+                <div className="text-center p-5 w-full md:absolute md:bottom-0 ">
+                  <span className="text-gray-100">
+                    © Oka Sentana 2024 • imprint
+                  </span>
+                </div>
               </div>
             </div>
 
             {/* Content Area */}
             <div className="flex-1">
               {/* Sticky Header */}
-              <nav className="flex items-end justify-between p-5 md:p-8 fixed top-0 w-full  z-20 border-b border-slate-800 md:sticky md:w-auto md:top-0">
+              <nav className="flex items-end justify-between p-5 md:p-8 fixed top-0 w-full  z-20 border-b border-slate-800 md:sticky md:w-auto md:top-0 bg-black">
                 {/* Hamburger Menu for Mobile */}
                 <button
                   className="text-gray-400 hover:text-white md:hidden transition"
@@ -165,7 +165,7 @@ export default function RootLayout({
               </nav>
 
               {/* Children Content */}
-              <main className=" md:ml-[22.5rem] ml-0 p-5">{children}</main>
+              <main className=" md:ml-[30rem] ml-0 p-5">{children}</main>
             </div>
           </div>
         </div>
