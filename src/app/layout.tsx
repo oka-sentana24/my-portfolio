@@ -1,14 +1,14 @@
 "use client";
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Electrolize } from "next/font/google";
 import "./globals.css";
 import { Avatar, Card, Typography } from "@mui/material";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { MdClose, MdMenu, MdOutlineEmail } from "react-icons/md";
 import { useState } from "react";
 
-const inter = Inter({ subsets: ["latin"] });
+const electrolize = Electrolize({ subsets: ["latin"], weight: "400" });
 
 // export const metadata: Metadata = {
 //   title: "Create Next App",
@@ -25,7 +25,7 @@ export default function RootLayout({
   const toggleMenu = () => setMenuOpen(!menuOpen);
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={electrolize.className}>
         <div className="flex flex-col h-screen">
           {/* Mobile Menu Overlay */}
           <div
@@ -43,39 +43,39 @@ export default function RootLayout({
               </button>
               <div className="flex flex-col items-center justify-center h-full">
                 <a
-                  href="#"
+                  href="/"
                   className="text-gray-100 hover:text-white text-2xl py-4"
                   onClick={toggleMenu}
                 >
                   HOME
                 </a>
                 <a
-                  href="#"
+                  href="/Posts"
                   className="text-gray-100 hover:text-white text-2xl py-4"
                   onClick={toggleMenu}
                 >
                   POSTS
                 </a>
                 <a
-                  href="#"
+                  href="/Portfolio"
                   className="text-gray-100 hover:text-white text-2xl py-4"
                   onClick={toggleMenu}
                 >
                   PORTFOLIO
                 </a>
                 <a
-                  href="#"
+                  href="/About"
                   className="text-gray-100 hover:text-white text-2xl py-4"
                   onClick={toggleMenu}
                 >
                   ABOUT
                 </a>
                 <a
-                  href="#"
+                  href="/Gallery"
                   className="text-gray-100 hover:text-white text-2xl py-4"
                   onClick={toggleMenu}
                 >
-                  ACCOMPLISHMENTS
+                  GALLERY
                 </a>
                 <a
                   href="#"
@@ -143,20 +143,23 @@ export default function RootLayout({
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex gap-8 md:items-end md:absolute md:right-0 md:top-0 md:mt-5 md:mx-5">
-                  <a href="#" className="text-gray-100 hover:text-white">
+                  <a href="/" className="text-gray-100 hover:text-white">
                     HOME
                   </a>
-                  <a href="#" className="text-gray-100 hover:text-white">
+                  <a href="/Posts" className="text-gray-100 hover:text-white">
                     POSTS
                   </a>
-                  <a href="#" className="text-gray-100 hover:text-white">
+                  <a
+                    href="/Portfolio"
+                    className="text-gray-100 hover:text-white"
+                  >
                     PORTFOLIO
                   </a>
-                  <a href="#" className="text-gray-100 hover:text-white">
+                  <a href="/About" className="text-gray-100 hover:text-white">
                     ABOUT
                   </a>
-                  <a href="#" className="text-gray-100 hover:text-white">
-                    ACCOMPLISHMENTS
+                  <a href="/Gallery" className="text-gray-100 hover:text-white">
+                    GALLERY
                   </a>
                   <a href="#" className="text-gray-100 hover:text-white">
                     CONTACT
