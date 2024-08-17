@@ -3,7 +3,16 @@
 import type { Metadata } from "next";
 import { Electrolize } from "next/font/google";
 import "./globals.css";
-import { Avatar, Card, Typography } from "@mui/material";
+import {
+  Avatar,
+  Button,
+  Card,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Typography,
+} from "@mui/material";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { MdClose, MdMenu, MdOutlineEmail } from "react-icons/md";
 import { useState } from "react";
@@ -21,8 +30,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
+  const toggleModal = () => setModalOpen(!modalOpen);
   return (
     <html lang="en">
       <body className={electrolize.className}>
@@ -96,11 +107,14 @@ export default function RootLayout({
                 <div className="grid place-items-center gap-5">
                   <Avatar
                     alt="Oka Sentana"
-                    src="/static/images/avatar/1.jpg"
+                    src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97"
                     sx={{ width: 100, height: 100 }}
+                    onClick={toggleModal} // Open modal on click
+                    style={{ cursor: "pointer" }}
                   />
                   <h1 className="text-2xl md:text-4xl">I'M OKA SENTANA</h1>
                   <h2 className="text-md md:text-lg">Call me Oka</h2>
+                  <button className=" border-b py-2">Download Resume</button>
 
                   <div className="flex items-center justify-center gap-4">
                     <a href="#" aria-label="LinkedIn">
@@ -171,6 +185,31 @@ export default function RootLayout({
               <main className=" md:ml-[30rem] ml-0 p-5">{children}</main>
             </div>
           </div>
+          {/* Avatar Photo Modal */}
+          <Dialog
+            open={modalOpen}
+            onClose={toggleModal}
+            maxWidth={false} // Disable the maxWidth to allow the dialog to fit the content
+            PaperProps={{
+              style: { maxWidth: "unset" }, // Ensure the dialog's max-width is not constrained
+            }}
+          >
+            <div className="relative">
+              <Button
+                onClick={toggleModal}
+                className="absolute top-0 right-1 z-10 my-3"
+              >
+                <MdClose className=" text-2xl text-black" />
+              </Button>
+              <div className="p-2">
+                <img
+                  src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97" // Path to the full-size photo
+                  alt="Oka Sentana"
+                  className="w-full h-auto max-w-[500px] rounded-lg shadow-lg mx-auto"
+                />
+              </div>
+            </div>
+          </Dialog>
         </div>
       </body>
     </html>
