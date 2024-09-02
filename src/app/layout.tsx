@@ -89,7 +89,7 @@ export default function RootLayout({
                   GALLERY
                 </a>
                 <a
-                  href="#"
+                  href="/Contact"
                   className="text-gray-100 hover:text-white text-2xl py-4"
                   onClick={toggleMenu}
                 >
@@ -175,7 +175,7 @@ export default function RootLayout({
                   <a href="/Gallery" className="text-gray-100 hover:text-white">
                     GALLERY
                   </a>
-                  <a href="#" className="text-gray-100 hover:text-white">
+                  <a href="/Contact" className="text-gray-100 hover:text-white">
                     CONTACT
                   </a>
                 </div>
